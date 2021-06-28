@@ -1,0 +1,95 @@
+@import "theme";
+
+* {
+    font-family: WorkSans-Regular, sans-serif;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: .55em !important;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px $theme-background !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:  $theme-foreground !important;
+    outline: 1px solid slategrey !important;
+    border-radius: 10px !important;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: $theme-background;
+}
+
+main {
+    min-height: 80vh;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.theme-foreground {
+    background-color: $theme-foreground;
+}
+
+.theme-foreground-light {
+    background-color: $theme-foreground-light;
+}
+
+.theme-background {
+    background-color: $theme-background;
+}
+
+.theme-background-light {
+    background-color: $theme-background-light;
+}
+
+.theme-background {
+    background-color: $theme-background;
+}
+
+.theme-white {
+    background-color: $theme-white;
+}
+
+.theme-foreground-text {
+    color: $theme-foreground;
+}
+
+.theme-foreground-light-text {
+    color: $theme-foreground-light;
+}
+
+.theme-background-text {
+    color: $theme-background;
+}
+
+.theme-background-light-text {
+    color: $theme-background-light;
+}
+
+.theme-background-text {
+    color: $theme-background;
+}
+
+.theme-white-text {
+    color: $theme-white;
+}
+
+form {
+    .btn {
+        width: 150px;
+    }
+}
+
+

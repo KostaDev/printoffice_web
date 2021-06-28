@@ -1,0 +1,315 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #00adb5;
+}
+
+h1 {
+  font-size: 2.9em;
+}
+
+h2 {
+  font-size: 2.6em;
+}
+
+h3 {
+  font-size: 2.2em;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+h5 {
+  font-size: 1.6em;
+}
+
+a {
+  color: #00adb5 !important;
+}
+a:hover {
+  color: #00d0dc !important;
+}
+
+.collapsible, .collapsible-header, .collapsible-body {
+  border-color: #222831;
+}
+
+.keyboard-focused .collapsible-header:focus {
+  background-color: #00d0dc;
+}
+
+.collection {
+  background-color: #222831;
+  border: none;
+}
+.collection .collection-header {
+  color: #eeeeee;
+  background-color: #222831;
+  border-bottom: 4px solid #393e46;
+}
+.collection .collection-item {
+  background-color: #222831;
+  border-bottom: 2px solid #393e46;
+}
+.collection .collection-item:last-of-type {
+  border-bottom: none;
+}
+
+.select-wrapper .caret path:first-of-type {
+  fill: #eeeeee;
+}
+
+.dropdown-content {
+  width: 100%;
+}
+.dropdown-content li {
+  background-color: #393e46 !important;
+}
+.dropdown-content li span {
+  color: #eeeeee !important;
+}
+.dropdown-content li:hover {
+  background-color: #00d0dc;
+}
+.dropdown-content li:hover span {
+  color: #393e46;
+}
+.dropdown-content li .highlight {
+  color: #00adb5 !important;
+}
+.dropdown-content li.selected, .dropdown-content li:active, .dropdown-content li:focus {
+  background-color: #00adb5 !important;
+}
+.dropdown-content li.selected:hover, .dropdown-content li:active:hover, .dropdown-content li:focus:hover {
+  background-color: #00d0dc;
+}
+.dropdown-content li.selected:hover span, .dropdown-content li:active:hover span, .dropdown-content li:focus:hover span {
+  color: #393e46 !important;
+}
+
+.chips .chip {
+  background-color: #00adb5;
+  color: #eeeeee;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chips input {
+  color: #eeeeee !important;
+}
+
+.chips .autocomplete-content {
+  width: 40em !important;
+}
+
+.chips.focus {
+  border-bottom: 1px solid #00adb5 !important;
+  box-shadow: 0 1px 0 0 #00adb5 !important;
+}
+
+label {
+  color: #00adb5;
+}
+
+.chips + label {
+  color: #00adb5 !important;
+}
+
+ul.pagination li.active {
+  background-color: #00d0dc;
+}
+ul.pagination li.active button, ul.pagination li.active a {
+  font-weight: bold;
+  color: #393e46 !important;
+}
+ul.pagination li button, ul.pagination li a {
+  font-weight: bold;
+}
+ul.pagination li button:hover, ul.pagination li a:hover {
+  background-color: #00adb5;
+}
+
+input::placeholder {
+  color: #393e46;
+}
+
+input {
+  color: #eeeeee;
+}
+input[type=submit] {
+  background-color: #00adb5;
+}
+input[type=submit]:hover {
+  background-color: #00d0dc;
+  color: #393e46;
+}
+
+.input-label {
+  font-weight: bold;
+  color: #00adb5;
+}
+
+input[type=checkbox] + span::after {
+  border-color: #00adb5;
+  border-radius: 0;
+}
+
+input[type=checkbox].filled-in:checked + span:not(.lever):after {
+  background-color: #00adb5;
+  color: #00adb5;
+  border-color: transparent;
+}
+
+input[type=checkbox].filled-in:checked + span:not(.lever):before {
+  border-color: transparent;
+}
+
+input[type=checkbox] + span:focus, input[type=checkbox] + span:active, input[type=checkbox] + span::selection,
+input[type=checkbox]:focus,
+input[type=checkbox]:active,
+input[type=checkbox]::selection,
+input[type=radio] + span:focus,
+input[type=radio] + span:active,
+input[type=radio] + span::selection,
+input[type=radio]:focus,
+input[type=radio]:active,
+input[type=radio]::selection {
+  background-color: #00adb5;
+}
+
+.input-checkbox {
+  font-weight: bold;
+  color: #00adb5;
+}
+.input-checkbox input {
+  border-color: #00adb5;
+}
+.input-checkbox [type=radio]:not(:checked) + span:before {
+  border-radius: 0;
+  border-color: #393e46 !important;
+  background-color: #393e46 !important;
+}
+.input-checkbox [type=radio]:checked + span:before {
+  border-radius: 0;
+  border-color: #393e46 !important;
+  background-color: #393e46 !important;
+}
+.input-checkbox [type=radio]:checked + span:after {
+  border-color: #393e46 !important;
+  background-color: #00adb5 !important;
+}
+.input-checkbox [type=checkbox] + span:after {
+  border-radius: 0;
+  border-color: #00adb5 !important;
+}
+
+.input-field {
+  /* label focus color */
+  /* label underline focus color */
+  /* valid color */
+  /* invalid color */
+  /* icon prefix focus color */
+}
+.input-field input[type=text],
+.input-field input[type=date],
+.input-field input[type=password],
+.input-field input[type=email],
+.input-field textarea,
+.input-field input[type=text]:disabled,
+.input-field input[type=date]:disabled,
+.input-field input[type=email]:disabled,
+.input-field textarea:disabled {
+  box-sizing: border-box;
+  padding-left: 0.5em;
+  margin-top: 0.5em;
+  color: white;
+  border-bottom: 1px solid #393e46;
+}
+.input-field input[type=text]:disabled,
+.input-field input[type=date]:disabled,
+.input-field input[type=password]:disabled,
+.input-field input[type=email]:disabled,
+.input-field textarea:disabled,
+.input-field input[type=text]:disabled:disabled,
+.input-field input[type=date]:disabled:disabled,
+.input-field input[type=email]:disabled:disabled,
+.input-field textarea:disabled:disabled {
+  padding-left: 0;
+  border-bottom: none;
+}
+.input-field input[type=text]:disabled {
+  color: #eeeeee;
+}
+.input-field label {
+  color: #00adb5;
+}
+.input-field input[type=text]:disabled + label,
+.input-field input[type=email]:disabled + label,
+.input-field input[type=date]:disabled + label,
+.input-field textarea:disabled + label {
+  color: #00adb5 !important;
+}
+.input-field input[type=text]:focus + label,
+.input-field input[type=text]:focus:disabled + label,
+.input-field input[type=password]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field textarea:focus + label {
+  color: #00adb5 !important;
+}
+.input-field input[type=text]:focus,
+.input-field input[type=text]:focus:disabled,
+.input-field input[type=password]:focus,
+.input-field input[type=email]:focus,
+.input-field textarea:focus {
+  border-bottom: 1px solid #00adb5 !important;
+  box-shadow: 0 1px 0 0 #00adb5 !important;
+}
+.input-field .prefix.active {
+  color: #00adb5;
+}
+
+textarea {
+  color: #eeeeee;
+}
+
+.card {
+  background-color: #393e46;
+}
+.card .card-image {
+  text-align: center;
+}
+.card .card-content {
+  color: #eeeeee;
+}
+
+.modal {
+  background-color: #393e46;
+  color: #eeeeee;
+}
+.modal .modal-footer, .modal .modal-content {
+  background-color: #393e46;
+}
+
+table {
+  color: #eeeeee;
+}
+table th {
+  color: #00d0dc;
+}
+table tr {
+  border-color: #00adb5;
+}
+
+.tabs {
+  background-color: #393e46;
+}
+.tabs .indicator {
+  background-color: #00adb5;
+}
+
+.sidenav {
+  background-color: #393e46;
+}
+
+a.btn.text-white:hover {
+  color: black !important;
+}

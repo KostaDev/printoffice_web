@@ -1,0 +1,89 @@
+* {
+  font-family: WorkSans-Regular, sans-serif;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0.55em !important;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #222831 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00adb5 !important;
+  outline: 1px solid slategrey !important;
+  border-radius: 10px !important;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #222831;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.theme-foreground {
+  background-color: #00adb5;
+}
+
+.theme-foreground-light {
+  background-color: #00d0dc;
+}
+
+.theme-background {
+  background-color: #222831;
+}
+
+.theme-background-light {
+  background-color: #393e46;
+}
+
+.theme-background {
+  background-color: #222831;
+}
+
+.theme-white {
+  background-color: #eeeeee;
+}
+
+.theme-foreground-text {
+  color: #00adb5;
+}
+
+.theme-foreground-light-text {
+  color: #00d0dc;
+}
+
+.theme-background-text {
+  color: #222831;
+}
+
+.theme-background-light-text {
+  color: #393e46;
+}
+
+.theme-background-text {
+  color: #222831;
+}
+
+.theme-white-text {
+  color: #eeeeee;
+}
+
+form .btn {
+  width: 150px;
+}
