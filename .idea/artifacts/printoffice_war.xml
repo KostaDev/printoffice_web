@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="printoffice:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="printoffice-1.0.war">
+      <element id="artifact" artifact-name="printoffice:war exploded" />
+    </root>
+  </artifact>
+</component>
