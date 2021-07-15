@@ -6,9 +6,13 @@ import javax.persistence.*;
 import lombok.*;
 
 @Data
-@Entity
+@Entity(name = "Order")
 @Table(name = "`order`")
 @EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
+@NamedQueries({
+		@NamedQuery(name = "FindOrderByParametar", query = "select o from Order o where o.client.firstName like :parametar "+
+				"or o.client.lastName like :parametar")
+})
 public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

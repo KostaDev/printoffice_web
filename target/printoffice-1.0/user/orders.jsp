@@ -5,6 +5,7 @@
 <%@ page import="org.example.printoffice.database.entity.Client" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Comparator" %>
+<%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -19,7 +20,17 @@
 <main>
 	<%
 		pageContext.setAttribute("user", AuthenticationContextHolder.getUser());
-		List<Order> orders = DAOProvider.getDAO(Order.class).findAll();
+		List<Order> orders;
+		List<Order> searchedOrders = (List<Order>) request.getAttribute("searchedOrderList");
+		if (searchedOrders == null){
+			orders = DAOProvider.getDAO(Order.class).findAll();
+		} else if (searchedOrders.isEmpty()){
+
+			orders = new LinkedList<>();
+		} else {
+		    orders = searchedOrders;
+		}
+
 		orders.sort(Comparator.comparing(a -> a.getPrint().getDocument().getDeadline()));
 		pageContext.setAttribute("orders", orders);
 		pageContext.setAttribute("machines", DAOProvider.getDAO(PrintingMachine.class).findAll());
@@ -29,6 +40,13 @@
 	<div class="row">
 		<div class="col s12">
 			<a class="btn text-white grey" href="<c:url value="/user/create-order.jsp"/>"><i class="material-icons left">local_printshop</i>add order</a>
+		</div>
+		<div class="input-field col s12 m12 l6 xl6">
+			<form class="container" method="get" action="<c:url value="/user/orders/search"/>">
+				<input name="search" type="text">
+				<button class="btn" type="submit">search<i class="material-icons right">search</i></button>
+				<jsp:include page="../fragment/errorList.jsp"/>
+			</form>
 		</div>
 	</div>
 	<div class="row">
