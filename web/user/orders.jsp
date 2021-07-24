@@ -41,7 +41,8 @@
 		<div class="col s12">
 			<a class="btn text-white grey" href="<c:url value="/user/create-order.jsp"/>"><i class="material-icons left">local_printshop</i>add order</a>
 		</div>
-		<div class="input-field col s12 m12 l6 xl6">
+
+		<div class="input-field col s12">
 			<form class="container" method="get" action="<c:url value="/user/orders/search"/>">
 				<input name="search" type="text">
 				<button class="btn" type="submit">search<i class="material-icons right">search</i></button>
@@ -87,6 +88,13 @@
 								<button type="submit" class="btn-flat theme-foreground-light-text tooltipped"
 										data-tooltip="Show more">
 									<i class="material-icons">open_in_new</i>
+								</button>
+							</form>
+							<form method="post" action="<c:url value="/user/orders/delete" />">
+								<input name="order_id" type="hidden" value="${order.id}">
+								<button class="btn-flat red theme-foreground-light-text tooltipped" type="submit"
+									data-tooltip="Delete">
+									<i class="material-icons">delete</i>
 								</button>
 							</form>
 						</td>

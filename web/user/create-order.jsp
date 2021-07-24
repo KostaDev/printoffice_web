@@ -35,7 +35,7 @@
 		<div class="col s12">
 			<form class="container" method="post" action="<c:url value="/user/orders"/>">
 				<jsp:include page="../fragment/errorList.jsp"/>
-				<input name="order_id" value="" type="hidden">
+				<input name="order_id" value="0" type="hidden">
 				<input name="print_id" value="" type="hidden">
 				<input name="employee_id" value="${user.id}" type="hidden">
 				<div class="row">

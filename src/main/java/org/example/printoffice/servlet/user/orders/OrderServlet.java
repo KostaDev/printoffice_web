@@ -46,7 +46,12 @@ public class OrderServlet extends ServletWithContext {
 		GenericDAO<Order> orderDao = DAOProvider.getDAO(Order.class);
 		try {
 			Order order = validate(req);
+			if (Integer.parseInt(get(req,"order_id"))==0)
 			orderDao.create(order);
+			else {
+				order.setId(Integer.parseInt(get(req,"order_id")));
+				orderDao.update(order);
+			}
 			resp.sendRedirect(servletContext + "/user/orders.jsp");
 		} catch (Exception e) {
 			req.setAttribute("errors", new String[]{e.getMessage()});
@@ -62,10 +67,22 @@ public class OrderServlet extends ServletWithContext {
 		GenericDAO<Print> printDao = DAOProvider.getDAO(Print.class);
 		GenericDAO<PrintingMachine> printingMachineDao = DAOProvider.getDAO(PrintingMachine.class);
 
+		Integer documentId;
+		try{
+			documentId = Integer.parseInt(get(req, "document_id"));
+		} catch (NumberFormatException e){
+			documentId=0;
+		}
+
+		Integer printId;
+		try {
+			printId = Integer.parseInt(get(req,"print_id"));
+		} catch (NumberFormatException e){
+			printId = 0;
+		}
 		String deadline = getOrThrow(req, "deadline", "Deadline must be set");
 		String hardCover = get(req, "hard_cover");
 		String printInstructions = get(req, "printing_instructions");
-
 		String price = getOrThrow(req, "price", "Price must be set");
 
 		String clientId = req.getParameter("client_id");
@@ -92,8 +109,17 @@ public class OrderServlet extends ServletWithContext {
 		document.setHardCover(hardCover != null && hardCover.equals("on"));
 		document.setPrintInstructions(printInstructions);
 		document.setDeadline(dateDeadline);
-		Integer documentId = documentDao.create(document);
-		document.setId(documentId);
+		if (documentId==0) {
+			documentId = documentDao.create(document);
+			document.setId(documentId);
+		} else {
+			document.setId(documentId);
+			documentDao.update(document);
+		}
+
+
+
+
 
 		Print print = new Print();
 		Employee employee = employeeDao.find(Integer.parseInt(employeeId));
@@ -103,8 +129,14 @@ public class OrderServlet extends ServletWithContext {
 		print.setNote(note);
 		print.setPrintDate(datePrintDate);
 		print.setDocument(document);
-		Integer printId = printDao.create(print);
-		print.setId(printId);
+		if (printId== 0){
+			printId = printDao.create(print);
+			print.setId(printId);
+		} else {
+			print.setId(printId);
+			printDao.update(print);
+		}
+
 
 		Order order = new Order();
 		Client client;
@@ -128,6 +160,7 @@ public class OrderServlet extends ServletWithContext {
 		}
 		order.setClient(client);
 		order.setOrderDate(LocalDate.now());
+
 		order.setPaid(false);
 		order.setPrice(Float.parseFloat(price));
 		order.setPrint(print);
