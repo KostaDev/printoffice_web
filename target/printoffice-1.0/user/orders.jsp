@@ -47,6 +47,7 @@
 				<input name="search" type="text">
 				<button class="btn" type="submit">search<i class="material-icons right">search</i></button>
 				<jsp:include page="../fragment/errorList.jsp"/>
+				<jsp:include page="../fragment/successList.jsp"/>
 			</form>
 		</div>
 	</div>

@@ -46,13 +46,17 @@ public class OrderServlet extends ServletWithContext {
 		GenericDAO<Order> orderDao = DAOProvider.getDAO(Order.class);
 		try {
 			Order order = validate(req);
-			if (Integer.parseInt(get(req,"order_id"))==0)
-			orderDao.create(order);
+			if (Integer.parseInt(get(req,"order_id"))==0){
+				orderDao.create(order);
+				req.setAttribute("successes", "Order created!");
+			}
 			else {
 				order.setId(Integer.parseInt(get(req,"order_id")));
 				orderDao.update(order);
+				req.setAttribute("successes", "Order updated!");
 			}
-			resp.sendRedirect(servletContext + "/user/orders.jsp");
+
+			req.getRequestDispatcher("/user/orders.jsp").include(req, resp);
 		} catch (Exception e) {
 			req.setAttribute("errors", new String[]{e.getMessage()});
 			req.getRequestDispatcher("/user/create-order.jsp").include(req, resp);
